@@ -1,0 +1,11 @@
+
+fieldset img {
+    object-fit: contain;
+    filter: grayscale(100%);
+    gap: 3px;
+}
+
+#labelfieldset {
+    width: 150px;
+    height: 30px;
+}

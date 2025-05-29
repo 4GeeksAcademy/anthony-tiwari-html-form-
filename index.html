@@ -1,11 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>testing</h1>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>FORM HTML5</title>
+  </head>
+  <body>
+    <div class="container-fluid my-2 w-75">
+      <div class="card w-75 m-auto">
+        <form id="Form" class="row m-auto align-items-center border-secondary" novalidate>
+          <div class="card-header col-12">
+                <h2><strong>Payment form example</strong></h2>
+          </div>
+          <div class="card-body">
+            <div id="errorAlert" class="alert alert-danger col-12 d-none" role="alert">
+              Some fields are missing
+            </div>
+                <div class="row">
+                      <div class="col-md-5">
+                            <label for="inputCard" class="form-label">Card #</label>
+                            <input type="number" class="form-control" id="inputCard" maxlength="18" placeholder="XXXXXXXXXXXXXXXX" required>
+                            <div class="invalid-feedback">Put a valid credit card.</div>
+                      </div>
+
+                      <div class="col-md-3">
+                            <label for="inputCvc" class="form-label">CVC #</label>
+                            <input type="number" class="form-control" id="inputCvc" maxlength="3" placeholder="0000" required>
+                            <div class="invalid-feedback">Put a valid number.</div>
+                      </div>
+
+                      <div class="col-md-4">
+                            <label for="inputAmount" class="form-label">Amount</label> 
+                            <i class="fa-solid fa-dollar-sign"></i>
+                            <input type="number" class="form-control" id="inputAmount" placeholder="amount" required>
+                            <div class="invalid-feedback">Put an amount.</div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                            <label for="inputFirstname" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="inputFirstname" required>
+                            <div class="invalid-feedback">Put your name here.</div>
+                      </div>
+
+                      <div class="col-md-6">
+                              <label for="inputLastname" class="form-label">Last Name</label>
+                              <input type="text" class="form-control" id="inputLastname" required>
+                              <div class="invalid-feedback">Put your last name here.</div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                              <label for="inputCity" class="form-label">City</label>
+                              <input type="text" class="form-control" id="inputCity" required>
+                              <div class="invalid-feedback">City is required.</div>
+                      </div>
+
+                      <div class="col-md-3">
+                        <label for="stateSelect" class="form-label">State</label>
+                        <select class="form-select" id="stateSelect" required>
+                                <option value="">Pick a state</option>
+                                <option value="1">StateExample1</option>
+                                <option value="2">StateExample2</option>
+                                <option value="3">StateExample3</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a state.</div>
+                      </div>
+
+                      <div class="col-md-3">
+                        <label for="inputPostal" class="form-label">Postal Code</label>
+                        <input type="number" class="form-control" id="inputPostal" required>
+                        <div class="invalid-feedback">A postal code is required.</div>
+                      </div>
+                    </div>
+          <div class="row mt-3">
+                  <div class="col-md-6">
+                    <label class="form-label"><strong>We accept:</strong></label>
+                    <fieldset class="form-group">
+                      <div class="d-flex flex-wrap gap-2">
+                        <div class="form-check">
+                          <input type="radio" name="Ccard" value="visa" class="form-check-input" id="visa" required>
+                          <label for="visa">
+                            <img src="https://static-00.iconduck.com/assets.00/visa-icon-1024x314-u57a5w1h.png" alt="Visa" width="30" height="30">
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input type="radio" name="Ccard" value="master" class="form-check-input" id="mastercard">
+                          <label for="mastercard">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1200px-Mastercard-logo.svg.png" alt="MasterCard" width="30" height="30"">
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input type="radio" name="Ccard" value="discover" class="form-check-input" id="discover">
+                          <label for="discover">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968148.png" alt="Discover" width="30" height="30"">
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input type="radio" name="Ccard" value="americanexpress" class="form-check-input" id="americanexpress">
+                          <label for="americanexpress">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYZZeu0875YifnWnVpvtmbggpvyhnGV_wO5Cdo8f-GhHdhvnRI93NUz2IpiGSNgvBeg_U&usqp=CAU" alt="" width="30" height="30">
+                          </label>
+                        </div>
+                        <div class="invalid-feedback"></div>
+                      </div>
+                    </fieldset>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                    <small class="text-muted d-block mt-1">Add any notes here.</small>
+                  </div>
+                  
+                </div>
+                  </div>
+               <div class="card-footer d-flex justify-content-end">
+                <button type="button" class="btn btn-secondary m-1">Cancel</button>
+                <button type="submit" class="btn btn-primary m-1">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+<script src="https://kit.fontawesome.com/7be0177278.js" crossorigin="anonymous"></script>
+    <script>
+      const form = document.getElementById('Form');
+      const alert = document.getElementById('errorAlert');
+
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+          alert.classList.remove('d-none');
+        } else {
+          alert.classList.add('d-none');
+        }
+
+        form.classList.add('was-validated');
+      });
+    </script>
+  </body>
 </html>
